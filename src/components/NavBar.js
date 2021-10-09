@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import Navbar from 'react-bootstrap/Navbar'
 import Container from 'react-bootstrap/Container'
 import {Link} from 'react-router-dom'
@@ -17,6 +16,7 @@ const NavBar = () => {
                         width="35"
                         height="35"
                         className="d-inline-block align-top"
+                        alt=""
                     />
                     {' '}
                     <span className="h3">NewsApp</span></Navbar.Brand>
@@ -32,8 +32,5 @@ const NavBar = () => {
     )
 }
 
-NavBar.propTypes = {
-
-}
 
 export default NavBar
