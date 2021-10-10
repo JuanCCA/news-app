@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import New from '../components/New'
+import New from '../components/News/New'
 import { useFetchNews } from '../hooks/useFetchNews'
-import CreateNew from '../components/CreateNew'
+import CreateNew from '../components/News/CreateNew'
 
 const News = () => {
  
@@ -11,8 +11,8 @@ const News = () => {
 
     return (
         <>
-        <div className ="d-flex d-flex justify-content-center">
-            <p className="display-1 m-auto">Noticias</p>
+        <div className ="d-flex justify-content-center">
+            <p className="display-1 m-auto">News</p>
             <p className="m-auto"><CreateNew /></p>
         </div>
             <div align="center">

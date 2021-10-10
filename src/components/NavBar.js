@@ -8,7 +8,7 @@ import Nav from 'react-bootstrap/Nav'
 const NavBar = () => {
     return (
         <>
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="dark" variant="dark" sticky="top">
                 <Container>
                     <Navbar.Brand href="/" >
                     <img 

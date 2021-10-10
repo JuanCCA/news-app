@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button';
-import { createNew } from '../helpers/News/createNew';
+import { createNew } from '../../helpers/News/createNew';
 
 
 
@@ -72,7 +72,7 @@ const FormCreateNew = () => {
                 <Form.Label>Author</Form.Label>
                 <Form.Control required type="text" placeholder="Author" value={author} onChange={handleInputAuthor}/>
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="dark" type="submit" className="px-5">
                 Save
             </Button>
         </Form>

@@ -1,17 +1,17 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
-import {archiveNew} from '../helpers/News/archiveNew'
-import {formatDate} from '../helpers/Utils/dateFormater'
+import {deleteArchived} from '../../helpers/Archived/deleteArchived'
+import { formatDate } from '../../helpers/Utils/dateFormater'
+import Button from 'react-bootstrap/Button'
 
 
-const New = ({title,description,date,content,author,archiveDate,_id, setNews}) => {
-
-
+const ArchivedNew = ({_id,title,description,date,content,author,archiveDate,setArchived}) => {
+    
+    
     const formatedDate = formatDate(date)
-
-    // Archive a New, adding an archiveDate to this object in DB
-    const handlerArchive = async() => {
-        const resp = await archiveNew(_id)
+    // Delete an archived new from DB
+    const handlerDeleteArchived = async() => {
+        const resp = await deleteArchived(_id)
         if(resp === 200){
             handlerDeleteFromList()
         }
@@ -19,11 +19,12 @@ const New = ({title,description,date,content,author,archiveDate,_id, setNews}) =
 
     // Delete this item from the list 
     const handlerDeleteFromList = () => {
-        setNews( (news) => {
+        setArchived( (news) => {
             console.log(news)
             return news.filter( doc => doc._id !== _id)
         })
     }
+
 
     return (
         <Card style={{ width: '90%' }} className="my-3">
@@ -35,21 +36,24 @@ const New = ({title,description,date,content,author,archiveDate,_id, setNews}) =
 
             <div className="row">
                 <div className="col">
-                    Date: {formatedDate} 
+                    Archived date: {formatedDate} 
                 </div>
                 <div className="col">
                     Author: {author}
                 </div>
                 <div className="col">
-                    <button onClick={handlerArchive}>
+                    <Button onClick={handlerDeleteArchived}
+                            variant="dark">
                         <img 
-                        src="./eye-off.png"
-                        width="30"
-                        height="30"   
-                        alt=""                 
-                        >
-                    </img> Archive
-                    </button>
+                            src="./delete.png"
+                            width="25"
+                            height="25"
+                            className="d-inline-block align-top"   
+                            alt=""                 
+                            >
+                        </img>
+                        Delete
+                    </Button>
                 </div>
             </div>
                 
@@ -59,5 +63,4 @@ const New = ({title,description,date,content,author,archiveDate,_id, setNews}) =
     )
 }
 
-
-export default New
+export default ArchivedNew

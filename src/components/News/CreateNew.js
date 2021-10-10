@@ -13,8 +13,18 @@ const CreateNew = () => {
 
     return (
         <>
-          <Button variant="primary" onClick={handleShow}>
-           Create New
+          <Button variant="dark" 
+                  onClick={handleShow}
+          >
+            <img 
+                src="./plus.png"
+                width="25"
+                height="25"
+                className="d-inline-block align-top"   
+                alt=""                 
+                >
+            </img> 
+            Create New
           </Button>
     
           <Modal show={show} onHide={handleClose}>
