@@ -17,7 +17,7 @@ const News = () => {
                     {
                         newsList.map( item => (
                             <New key={item._id} {...item} setNews={setNews} />
-                        ))
+                        ))  
                     }
                 </ol>
             </div>

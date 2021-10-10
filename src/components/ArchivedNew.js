@@ -1,28 +1,27 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import {deleteArchived} from '../helpers/Archived/deleteArchived'
-
+import { formatDate } from '../helpers/Utils/dateFormater'
 
 const ArchivedNew = ({_id,title,description,date,content,author,archiveDate,setArchived}) => {
     
     
-    const stringToDate = new Date(archiveDate)
-    const dateString = `${stringToDate.getFullYear()}/${stringToDate.getMonth() + 1}/${stringToDate.getDate()}  ${stringToDate.getHours()}:${stringToDate.getMinutes()}`
-    
+    const formatedDate = formatDate(date)
+    // Delete an archived new from DB
     const handlerDeleteArchived = async() => {
         const resp = await deleteArchived(_id)
         if(resp === 200){
             handlerDeleteFromList()
         }
     }
+
+    // Delete this item from the list 
     const handlerDeleteFromList = () => {
         setArchived( (news) => {
             console.log(news)
             return news.filter( doc => doc._id !== _id)
         })
     }
-
-
 
 
     return (
@@ -35,21 +34,22 @@ const ArchivedNew = ({_id,title,description,date,content,author,archiveDate,setA
 
             <div className="row">
                 <div className="col">
-                    Archived date: {dateString} 
+                    Archived date: {formatedDate} 
                 </div>
                 <div className="col">
                     Author: {author}
                 </div>
                 <div className="col">
-                    <img 
-                        role='button'
-                        src="./delete.png"
-                        width="30"
-                        height="30"   
-                        alt=""                 
-                        onClick={handlerDeleteArchived}
-                        >
-                    </img>
+                    <button onClick={handlerDeleteArchived}>
+                        <img 
+                            src="./delete.png"
+                            width="30"
+                            height="30"   
+                            alt=""                 
+                            >
+                        </img>
+                        Delete
+                    </button>
                 </div>
             </div>
                 

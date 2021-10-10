@@ -1,14 +1,15 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import {archiveNew} from '../helpers/News/archiveNew'
+import {formatDate} from '../helpers/Utils/dateFormater'
 
 
 const New = ({title,description,date,content,author,archiveDate,_id, setNews}) => {
 
-    const stringToDate = new Date(date)
 
-    const dateString = `${stringToDate.getFullYear()}/${stringToDate.getMonth() + 1}/${stringToDate.getDate()}  ${stringToDate.getHours()}:${stringToDate.getMinutes()}`
-    
+    const formatedDate = formatDate(date)
+
+    // Archive a New, adding an archiveDate to this object in DB
     const handlerArchive = async() => {
         const resp = await archiveNew(_id)
         if(resp === 200){
@@ -16,6 +17,7 @@ const New = ({title,description,date,content,author,archiveDate,_id, setNews}) =
         }
     }
 
+    // Delete this item from the list 
     const handlerDeleteFromList = () => {
         setNews( (news) => {
             console.log(news)
@@ -33,21 +35,21 @@ const New = ({title,description,date,content,author,archiveDate,_id, setNews}) =
 
             <div className="row">
                 <div className="col">
-                    Date: {dateString} 
+                    Date: {formatedDate} 
                 </div>
                 <div className="col">
                     Author: {author}
                 </div>
                 <div className="col">
-                    <img 
-                        role='button'
+                    <button onClick={handlerArchive}>
+                        <img 
                         src="./eye-off.png"
                         width="30"
                         height="30"   
                         alt=""                 
-                        onClick={handlerArchive}
                         >
-                    </img>
+                    </img> Archive
+                    </button>
                 </div>
             </div>
                 
