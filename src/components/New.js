@@ -1,13 +1,27 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
+import {archiveNew} from '../helpers/News/archiveNew'
 
 
-const New = ({title,description,date,content,author,archiveDate}) => {
+const New = ({title,description,date,content,author,archiveDate,_id, setNews}) => {
 
-    const pape = (e) => {
-        console.log(e)
+    const stringToDate = new Date(date)
+
+    const dateString = `${stringToDate.getFullYear()}/${stringToDate.getMonth() + 1}/${stringToDate.getDate()}  ${stringToDate.getHours()}:${stringToDate.getMinutes()}`
+    
+    const handlerArchive = async() => {
+        const resp = await archiveNew(_id)
+        if(resp === 200){
+            handlerDeleteFromList()
+        }
     }
 
+    const handlerDeleteFromList = () => {
+        setNews( (news) => {
+            console.log(news)
+            return news.filter( doc => doc._id !== _id)
+        })
+    }
 
     return (
         <Card style={{ width: '90%' }} className="my-3">
@@ -19,7 +33,7 @@ const New = ({title,description,date,content,author,archiveDate}) => {
 
             <div className="row">
                 <div className="col">
-                    Date: {date} 
+                    Date: {dateString} 
                 </div>
                 <div className="col">
                     Author: {author}
@@ -29,8 +43,9 @@ const New = ({title,description,date,content,author,archiveDate}) => {
                         role='button'
                         src="./eye-off.png"
                         width="30"
-                        height="30"                    
-                        onClick={pape}
+                        height="30"   
+                        alt=""                 
+                        onClick={handlerArchive}
                         >
                     </img>
                 </div>
