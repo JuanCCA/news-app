@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card'
 import {deleteArchived} from '../../helpers/Archived/deleteArchived'
 import { formatDate } from '../../helpers/Utils/dateFormater'
 import Button from 'react-bootstrap/Button'
+import PropTypes from 'prop-types';
 
 
 const ArchivedNew = ({_id,title,description,date,content,author,archiveDate,setArchived}) => {
@@ -20,7 +21,6 @@ const ArchivedNew = ({_id,title,description,date,content,author,archiveDate,setA
     // Delete this item from the list 
     const handlerDeleteFromList = () => {
         setArchived( (news) => {
-            console.log(news)
             return news.filter( doc => doc._id !== _id)
         })
     }
@@ -61,6 +61,17 @@ const ArchivedNew = ({_id,title,description,date,content,author,archiveDate,setA
         </Card.Body>
         </Card>
     )
+}
+
+
+ArchivedNew.propTypes = {
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    archiveDate: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    setArchived: PropTypes.func.isRequired,
 }
 
 export default ArchivedNew

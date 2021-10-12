@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <CreateNew /> should create correctly the component 1`] = `
+<Fragment>
+  <Button
+    active={false}
+    disabled={false}
+    id="buttonModal"
+    onClick={[Function]}
+    variant="dark"
+  >
+    <img
+      alt=""
+      className="d-inline-block align-top"
+      height="25"
+      src="./plus.png"
+      width="25"
+    />
+    Create New
+  </Button>
+  <Modal
+    animation={true}
+    autoFocus={true}
+    backdrop={true}
+    dialogAs={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "render": [Function],
+      }
+    }
+    enforceFocus={true}
+    keyboard={true}
+    onHide={[Function]}
+    restoreFocus={true}
+    show={false}
+  >
+    <ModalHeader
+      closeButton={true}
+      closeLabel="Close"
+    >
+      <ModalTitle>
+        Create a New
+      </ModalTitle>
+    </ModalHeader>
+    <ModalBody>
+      <FormCreateNew />
+    </ModalBody>
+  </Modal>
+</Fragment>
+`;

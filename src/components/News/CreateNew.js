@@ -15,6 +15,7 @@ const CreateNew = () => {
         <>
           <Button variant="dark" 
                   onClick={handleShow}
+                  id="buttonModal"
           >
             <img 
                 src="./plus.png"

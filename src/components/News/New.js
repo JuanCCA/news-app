@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card'
 import {archiveNew} from '../../helpers/News/archiveNew'
 import {formatDate} from '../../helpers/Utils/dateFormater'
 import Button from 'react-bootstrap/Button'
+import PropTypes from 'prop-types';
+
 
 
 const New = ({title,description,date,content,author,archiveDate,_id, setNews}) => {
@@ -21,7 +23,6 @@ const New = ({title,description,date,content,author,archiveDate,_id, setNews}) =
     // Delete this item from the list 
     const handlerDeleteFromList = () => {
         setNews( (news) => {
-            console.log(news)
             return news.filter( doc => doc._id !== _id)
         })
     }
@@ -60,6 +61,16 @@ const New = ({title,description,date,content,author,archiveDate,_id, setNews}) =
         </Card.Body>
         </Card>
     )
+}
+
+New.propTypes = {
+    _id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    setNews: PropTypes.func.isRequired,
 }
 
 

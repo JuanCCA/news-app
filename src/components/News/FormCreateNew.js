@@ -54,7 +54,7 @@ const FormCreateNew = () => {
 
 
     return (
-        <Form onSubmit={handleSubmit}>
+        <Form id="form" onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Title</Form.Label>
                 <Form.Control required type="text" placeholder="Title"  value={title} onChange={handleInputTitle}/>

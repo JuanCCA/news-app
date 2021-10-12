@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import ArchivedNew from '../components/Archived/ArchivedNew'
 import {useFetchArchived} from '../hooks/useFetchArchived'
 
+
 const Archived = () => {
     
     const [archived,setArchived] = useState([])
@@ -30,6 +31,8 @@ const Archived = () => {
         </>
     )
 }
+
+
 
 
 

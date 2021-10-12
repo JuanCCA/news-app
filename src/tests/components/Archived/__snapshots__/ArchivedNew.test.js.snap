@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing component <ArchivedNew /> should create the component correctly with all of arguments needed 1`] = `
+<Card
+  body={false}
+  className="my-3"
+  style={
+    Object {
+      "width": "90%",
+    }
+  }
+>
+  <CardBody>
+    <CardTitle>
+      TITLE 1
+    </CardTitle>
+    <CardSubtitle
+      className="mb-2 text-muted"
+    >
+      Description of the new
+    </CardSubtitle>
+    <CardText>
+      content of the new
+    </CardText>
+    <CardFooter>
+      <div
+        className="row"
+      >
+        <div
+          className="col"
+        >
+          Archived date: 
+          NaN/NaN/NaN  NaN:NaN
+        </div>
+        <div
+          className="col"
+        >
+          Author: 
+          Juan Carlos
+        </div>
+        <div
+          className="col"
+        >
+          <Button
+            active={false}
+            disabled={false}
+            onClick={[Function]}
+            variant="dark"
+          >
+            <img
+              alt=""
+              className="d-inline-block align-top"
+              height="25"
+              src="./delete.png"
+              width="25"
+            />
+            Delete
+          </Button>
+        </div>
+      </div>
+    </CardFooter>
+  </CardBody>
+</Card>
+`;

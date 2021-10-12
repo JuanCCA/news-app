@@ -12,9 +12,8 @@ export const createNew = async (title,description,content,author) => {
         author,
     }
 
-    console.log("PAYLOAD:", payload)
     const resp = await fetchAnonymous('news/create_new', payload, 'POST')
-    const news = await resp.json()
-    return news
+    const response = await resp.json()
+    return response
 
 }
