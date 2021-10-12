@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing <Archived /> Component should create the component correctly 1`] = `
+<Fragment>
+  <div
+    className="d-flex justify-content-center"
+  >
+    <p
+      className="display-1 m-auto"
+    >
+      Archived
+    </p>
+  </div>
+  <div
+    align="center"
+  >
+    <ol>
+      <p
+        className="animate__animated animate__flash"
+      >
+        Loading
+      </p>
+    </ol>
+  </div>
+</Fragment>
+`;

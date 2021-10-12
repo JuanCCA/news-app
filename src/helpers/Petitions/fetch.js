@@ -1,9 +1,10 @@
-const baseUrl = 'http://localhost:4000/api';
+const baseUrl = process.env.REACT_APP_URI;
 
 export const fetchAnonymous = ( endpoint, data, method = 'GET' ) => {
 
     const url =`${ baseUrl }/${ endpoint }`;
-    console.log(url)
+    console.log(process.env)
+    console.log("UNA COSA ",url)
     
     
     

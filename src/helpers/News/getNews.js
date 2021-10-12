@@ -1,9 +1,8 @@
-
+import { fetchAnonymous } from "../Petitions/fetch";
 
 export const getNews = async () => {
 
-    const url='http://localhost:4000/api/news/get_news';
-    const resp = await fetch( url )
+    const resp = await fetchAnonymous( 'news/get_news', null)
     const news = await resp.json()
 
     return news

@@ -6,8 +6,10 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import News from './views/News'
 import Archived from './views/Archived'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+require('dotenv').config();
 
 ReactDOM.render(
+
   <React.StrictMode>
     <Router>
       <NavBar />
@@ -19,6 +21,7 @@ ReactDOM.render(
       
     </Router>
   </React.StrictMode>,
+  
   document.getElementById('root')
 );
 
