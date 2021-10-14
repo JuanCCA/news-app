@@ -20,7 +20,6 @@ describe('Testing component <ArchivedNew />', () => {
     let wrapper = shallow(<ArchivedNew key={args._id}  {...args} setArchived={setArchived}/>)
 
     beforeEach( () => {
-        //jest.clearAllMocks();
         wrapper = shallow(<ArchivedNew key={args._id}  {...args} setArchived={setArchived}/>);
     });
 
