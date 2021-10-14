@@ -5,12 +5,13 @@ describe('Testing archiveNew', () => {
     
     test('should return 200 if is archived', async() => {
     
-        const response = await archiveNew("");  
+        const newID = "" // Pass archived new ID
+        
+        const response = await archiveNew(newID);  
 
         expect( response ).toBe( 200 );
 
     })
 
-    //TODO SI EL BAC ESTA CAIDO QUE DEVUELVA UN ERROR Y ASI INFORMAR EN EL FRONT
 
 })

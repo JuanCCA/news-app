@@ -13,7 +13,6 @@ describe('Testing <News /> Component', () => {
     let wrapper = shallow(<News />);
 
     beforeEach( () => {
-        jest.clearAllMocks();
         wrapper = shallow(<News />);
     });
 

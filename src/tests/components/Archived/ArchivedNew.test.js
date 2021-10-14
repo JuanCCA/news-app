@@ -20,7 +20,7 @@ describe('Testing component <ArchivedNew />', () => {
     let wrapper = shallow(<ArchivedNew key={args._id}  {...args} setArchived={setArchived}/>)
 
     beforeEach( () => {
-        jest.clearAllMocks();
+        //jest.clearAllMocks();
         wrapper = shallow(<ArchivedNew key={args._id}  {...args} setArchived={setArchived}/>);
     });
 
@@ -29,6 +29,11 @@ describe('Testing component <ArchivedNew />', () => {
         
         expect(wrapper).toMatchSnapshot()
 
+
+    })
+
+    test('should execute the methods to delete from DB and locally', () => {        
+        
 
     })
 

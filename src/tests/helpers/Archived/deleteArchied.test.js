@@ -5,18 +5,17 @@ describe('Testing deleteArchived', () => {
     
     test('should return 200 if everything went well', async() => {
         
-        const archived = await deleteArchived(""); //TODO 
-        console.log(archived)
-
-        expect( archived.length ).toBe( 200 );
+        const archivedID = ""  // Pass a correct ID from an Archived New to delete 
+        const archived = await deleteArchived(archivedID); 
+        expect( archived ).toBe( 200 );
 
     })
 
     test('should return 500 if something happenend', async() => {
         
-        const gifs = await deleteArchived(''); //TODO
+        const archived = await deleteArchived(''); //Pass an incorrect ID to return a server error ( 500 )
 
-        expect( gifs.length ).toBe( 0 );
+        expect( archived ).toBe( 500 );
 
     })
     

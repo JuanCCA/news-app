@@ -10,11 +10,9 @@ import  Archived  from '../../views/Archived';
 describe('Testing <Archived /> Component', () => {
     
 
-    let useFetchArchived = jest.fn()
     let wrapper = shallow(<Archived />);
 
     beforeEach( () => {
-        jest.clearAllMocks();
         wrapper = shallow(<Archived />);
     });
 
@@ -23,16 +21,6 @@ describe('Testing <Archived /> Component', () => {
         expect( wrapper ).toMatchSnapshot();
 
     });
-
-    test('should call useFetchArchived', () => {
-  
-
-        
-    })
-    
-
-
-
 
 })
 

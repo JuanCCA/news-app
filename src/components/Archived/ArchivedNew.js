@@ -43,7 +43,8 @@ const ArchivedNew = ({_id,title,description,date,content,author,archiveDate,setA
                 </div>
                 <div className="col">
                     <Button onClick={handlerDeleteArchived}
-                            variant="dark">
+                            variant="dark"
+                            id="delete">
                         <img 
                             src="./delete.png"
                             width="25"

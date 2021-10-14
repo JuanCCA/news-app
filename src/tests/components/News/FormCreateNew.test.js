@@ -7,7 +7,7 @@ import '@testing-library/jest-dom';
 describe('Testing <FromCreateNew />', () => {
 
     let wrapper = shallow(<FromCreateNew />)
-    const handleSubmit = jest.fn()
+
 
     beforeEach( () => {
         jest.clearAllMocks()
@@ -20,16 +20,5 @@ describe('Testing <FromCreateNew />', () => {
 
     })
 
-    test('should show modal when button pressed', () => {
-
-        wrapper.find('#form').simulate('submit')
-
-        expect(handleSubmit).toHaveBeenCalled(); //TODO
-
-
-    })
-
-
-    
 
 })

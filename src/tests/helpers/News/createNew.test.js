@@ -18,6 +18,5 @@ describe('Testing createNew', () => {
 
     })
 
-    //TODO SI EL BAC ESTA CAIDO QUE DEVUELVA UN ERROR Y ASI INFORMAR EN EL FRONT
 
 })

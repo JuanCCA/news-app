@@ -44,6 +44,7 @@ exports[`Testing component <ArchivedNew /> should create the component correctly
           <Button
             active={false}
             disabled={false}
+            id="delete"
             onClick={[Function]}
             variant="dark"
           >

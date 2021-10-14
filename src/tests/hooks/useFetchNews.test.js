@@ -19,11 +19,12 @@ describe('Testing hook useFetchNews', () => {
     test('should return an array of news and loading -> false', async() => {
         
         const { result, waitForNextUpdate } = renderHook( () => useFetchNews() );
+        
         await waitForNextUpdate();
 
         const { data, loading } = result.current;
 
-        expect( data.length ).toBe( 1 ); // Nuber of News in DB
+        expect( data.length > 0 ).toBe( true ); // Number of News in DB
         expect( loading ).toBe( false );
     });
     

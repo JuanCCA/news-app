@@ -16,14 +16,15 @@ describe('Testing hook useFetchArchived', () => {
 
     })
 
-    test('should return an array of news and loading -> false', async() => {
+    test('should return an array of archived news and loading -> false', async() => {
         
         const { result, waitForNextUpdate } = renderHook( () => useFetchArchived() );
+        
         await waitForNextUpdate();
 
         const { data, loading } = result.current;
 
-        expect( data.length ).toBe( 2 ); // Nuber of Archived documents in DB
+        expect( data.length > 0).toBe( true ); // Number of Archived documents in DB
         expect( loading ).toBe( false );
     });
     
